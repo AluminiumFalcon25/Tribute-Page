@@ -1,0 +1,112 @@
+body {
+    /* Setting a base font size of 10px give us easier rem calculations
+     Info: 1rem === 10px, 1.5rem === 15px, 2rem === 20px and so forth
+    This is interesting, and had been working so far. I might make this a standard for me. 
+    */
+    font-size: 10px;
+    font-family: Arial, Helvetica, sans-serif;
+    /* from searching the web it looks like the font for the Jordan brand is possibly "Haettenschweiler" however the font 
+    does not look that great on the webpage. I think the Arial font is a good compromise 
+    */
+    line-height: 1.5;
+    text-align: center;
+    background-image: url(https://p.kindpng.com/picc/s/263-2635079_spiderman-white-logo-png-transparent-png.png);
+    /* https://p.kindpng.com/picc/s/263-2635079_spiderman-white-logo-png-transparent-png.png */
+    /* the background image is a little to light to see. I might go for a darker one in the future */
+}
+.title-banner {
+    border-radius: 20px;  
+    background-color: rgb(201, 198, 198);
+    display: grid;
+    grid-template-columns: 30px 1.5fr 1fr 0.5fr 30px;
+    grid-template-rows: 30px 1.5fr 1fr 0.5fr 30px;
+    /* I kind of wish I could make the name text a little higher on the banner div element, however, it still looks pretty good  */
+}
+.title-banner-bg {
+    opacity: 0.2;
+    background: url(https://i.pinimg.com/originals/2e/55/af/2e55afad7b3683162ef017e59f4a3c15.jpg);
+    /* Alternate Photos https://www.gamespot.com/a/uploads/original/1539/15391776/2893857-9974805860-nba-2.jpg 
+    https://wallpapercave.com/wp/VPMzqWf.jpg
+    https://coolwallpapers.me/th700/5665089-michael-jordan-wallpapers.jpg
+    https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcReUICLQH-cUyz8Yoa2RWqgcXM3N8HG9MWAMkGsyfPBih249UKyDFqIXMTZRksfvKcbrEQ&usqp=CAU
+    */
+    background-position: center;
+    background-size: cover;
+    border-radius: 20px; 
+    grid-column: 1 / -1;
+    grid-row: 1 / -1;
+}
+
+h1 { font-size: 10rem; grid-column: 2 / 5; grid-row: 1 / 5;
+    /* I tried incorporating the colors of the bulls/tarheels but they dont really look that great on the webpage 
+    */
+    
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+
+        font-size: 3.5rem;
+    }
+    
+    }
+
+#title-quote{ font-size: 2rem; grid-column: 2 / 5; grid-row: 4 / 5;}
+#img-div {
+    padding: 2em 20px 2em 20px; 
+    /* I'm not sure how to get this to have a constant padding size. This is something I would change in the future. */
+    background-color: #9e04044f;
+    max-width: 100%;
+    border-radius: 20px;  
+ 
+    overflow: hidden;
+
+}
+#image {
+    display: block;
+    max-width: 100%;
+    margin: 0 auto;
+}
+
+#tribute-info {
+font-size: 12px;
+    background-color: #7BAFD44f;
+    border-radius: 20px;
+    padding: 2em 20px 2em 20px; 
+    max-width: 100%;
+    margin: 0 auto;
+    /* overflow: hidden; */
+    align-items: center;
+}
+
+.fact-section > *:not(:last-child) {
+display: block;
+margin-bottom: 30px;
+/* got this from google search to add margin to wach child of a div */
+}
+
+
+
+@media only screen and (min-width: 550px) {
+   .fact-section {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    gap: 20px;
+    /* grid: 
+        'header header header'
+        'fact1 fact2 fact3'
+        'fact4 fact5 fact6'
+        'link link link'; */
+        /* I can't quite figure out how to wrap the columns on smaller divices unfortuantely. I think a media query to show grid (or flexbox) on higher screens and regular divs on lower screens 
+        is what is called for. Update - Yes I think this looks better. Origionally, I had a repeat/minmax function but that kept adding more and more columns which did not look great. I think 3 columns works
+        for this exercise */
+        /* grid-gap: 20px 15px;  */
+} 
+}
+
+
+
+
+
+#header {  font-size: 2rem;}
+#link { grid-area: link; align-self: center;}
